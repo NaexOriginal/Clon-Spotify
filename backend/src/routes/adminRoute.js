@@ -1,9 +1,8 @@
 import { Router } from 'express';
+import { getAdmin } from '../controller/adminController.js';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.send('Ruta de administrador adquirida con metodo GET');
-})
+router.get('/', getAdmin)
 
 export default router;
