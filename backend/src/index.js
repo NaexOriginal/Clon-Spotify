@@ -1,5 +1,7 @@
 import express from 'express';
+
 import { adminRoutes, albumRoutes, authRoutes, songRoutes, statsRoutes, userRoutes } from './routes/barrelRoutes.js';
+import { clerkMiddleware } from '@clerk/express'
 import { connectDB } from './lib/db.js';
 
 
@@ -7,6 +9,7 @@ const app = express();
 const puerto = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(clerkMiddleware());
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
