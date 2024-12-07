@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const songSchema = new mongoose.Schema({
   title: {
-    rype: String,
+    type: String,
     required: true,
   },
   artist: {
