@@ -41,3 +41,6 @@ app.listen(puerto, () => {
   console.log(`El servidor esta ejecutandose en el puerto ${puerto}`);
   connectDB();
 });
+
+
+// Todo: El Web Socket debe ser implementado

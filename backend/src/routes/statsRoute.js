@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import { protectRoute, requireAdmin } from '../middleware/authMiddleware.js';
+import { getStats } from '../controller/statController.js';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.send('Ruta de estadisticas adquirida con metodo GET');
-})
+router.get('/', protectRoute, requireAdmin, getStats);
 
 export default router;
