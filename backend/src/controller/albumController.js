@@ -7,7 +7,7 @@ export const getAllAlbums = async (req, res, next) => {
 
   } catch(error) {
     console.error(`Error al obtener los Albums: ${error}`);
-    next(error)
+    next(error);
   }
 };
 
