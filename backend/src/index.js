@@ -1,6 +1,7 @@
 import express from 'express';
 import fileUpload from 'express-fileupload';
 import path from 'path';
+import cors from 'cors';
 
 import { adminRoutes, albumRoutes, authRoutes, songRoutes, statsRoutes, userRoutes } from './routes/barrelRoutes.js';
 import { clerkMiddleware } from '@clerk/express'
@@ -11,6 +12,12 @@ const __dirname = path.resolve();
 const app = express();
 const puerto = process.env.PORT || 3000;
 
+app.use(cors(
+  {
+    origin: 'http://localhost:5173',
+    credentials: true,
+  }
+));
 app.use(express.json());
 app.use(clerkMiddleware());
 app.use(fileUpload({
