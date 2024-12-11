@@ -17,7 +17,9 @@
     "nodemon": "^3.1.7"
   },
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "seed:songs": "bun src/seeds/songs.js",
+    "seed:albums": "bun src/seeds/albums.js"
   },
   "type": "module"
 }
