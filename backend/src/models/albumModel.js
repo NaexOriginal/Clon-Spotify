@@ -17,7 +17,7 @@ const albumSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  sonngs: [
+  songs: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Song' }
   ],
 }, { timestamps: true });
